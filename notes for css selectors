@@ -1,0 +1,10 @@
+
+if we have id - id="values" ---- css for this --- #values -- #value of id
+if we have class - class="values" ---- css for this --- .values 
+class="value1 value2 value3" -- .value1.value2.value3
+.navbar.navbar-inverse.navbar-fixed-top
+
+cy.contains("TEXT")
+
+https://docs.cypress.io/guides/references/assertions
+https://www.chaijs.com/
