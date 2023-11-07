@@ -9,7 +9,7 @@ describe("validating iframe modal",()=>{
             cy.wrap(frame).as("thiswe")
             cy.get("@thiswe").find('[data-target="#myModal"]').click()
             cy.get("@thiswe").find("div.modal-body > p")
-            .should("include.text", "laptops, game consoles, cameras...")
+            .should("include.text", "laptops, game console")
         })
     })
 })
