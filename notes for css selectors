@@ -8,3 +8,5 @@ cy.contains("TEXT")
 
 https://docs.cypress.io/guides/references/assertions
 https://www.chaijs.com/
+
+// coverting csv/excel to json
