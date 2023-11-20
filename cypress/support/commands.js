@@ -23,4 +23,35 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-///<reference types="cypress"/>
+
+
+
+Cypress.Commands.add("getAutocomplte",() => {
+    cy.get("#autocomplete-textfield").invoke("removeAttr","target")
+})
+
+Cypress.Commands.add("getFoodItem",(foodItem) => {
+    cy.get("[placeholder='Food Item']").type(foodItem)
+})
+
+Cypress.Commands.add("getSumitFoodButton",()=>{
+    cy.get("#submit-button")
+})
+
+Cypress.Commands.add("getAutoSuggetions",()=>{
+    cy.get(".autocomplete-items >div")
+})
+
+Cypress.Commands.add("iframe",()=>{
+    cy.get("#iframe").invoke("removeAttr", "target").click()
+})
+
+Cypress.Commands.add("getIntoIframe", () => {
+    cy.get("#frame").then((newFrame) => {
+        const frame = newFrame.contents().find("body")
+        cy.wrap(frame).as("thiswe")
+        cy.get("@thiswe").find('[data-target="#myModal"]').click()
+        cy.get("@thiswe").find("div.modal-body > p")
+            .should("include.text", "laptops, game console")
+    })
+})

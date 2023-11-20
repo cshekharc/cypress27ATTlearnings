@@ -40,6 +40,8 @@ module.exports = defineConfig({
       // })
       // implement node event listeners here
     },
+    baseUrl : "https://www.webdriveruniversity.com/",
+    includeShadowDom : true
   },
 });
 

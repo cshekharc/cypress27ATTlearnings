@@ -3,13 +3,12 @@
 describe("auto suggetions for food items",()=>{
     it("validate the food item selected",()=>{
         cy.visit("https://www.webdriveruniversity.com/")
-        cy.get("#autocomplete-textfield").invoke("removeAttr","target").click()
-        cy.get("[placeholder='Food Item']").type("p")
-        cy.get(".autocomplete-items >div").each((foodItem)=>{
+        cy.getAutocomplte().click()
+        cy.getFoodItem("p")
+        cy.getAutoSuggetions().each((foodItem)=>{
             if(foodItem.text()==="Pancakes"){
                 cy.wrap(foodItem).click()
-                //foodItem.click()
-                cy.get("#submit-button").click()
+                cy.getSumitFoodButton().click()
                 cy.url().should("include", "Pancakes")
             }
 
